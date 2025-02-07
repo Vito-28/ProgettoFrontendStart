@@ -52,59 +52,67 @@ function Homepage() {
   }
 
   return (
-    <div>
-
-      <h1>To-Do List</h1>
-
-      {/*FORM PER AGGIUNGERE UN NUOVO TASK*/}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-        />
-        <button type="submit">Aggiungi</button>
-      </form>
-      
-      {/*LISTA DEI TASK*/}
-      <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            {/*GESTIONE DELLA MODIFICA DEL TASK*/}
-            {editingTaskId === task.id ? (
-              <>
-                <input
-                  type="text"
-                  value={editedText}
-                  onChange={(e) => setEditedText(e.target.value)}
-                />
-                <button onClick={() => handleSaveEdit(task.id)}>Salva</button>
-                <button onClick={handleCancelEdit}>Annulla</button>
-              </>
-            ) : (
-              <>
-                {/*VISUALIZZAZIONE DEL TASK*/}
-                <span
-                  style={{ textDecoration: task.completed ? "line-through" : "none" }}
-                >
-                  {task.text}
-                </span>
-                <button onClick={() => handleEditClick(task)}>Modifica</button>
-              </>
-            )}
-            <button onClick={() => toggleComplete(task.id)}>
-              {task.completed ? "Ripristina" : "Completa"}
-            </button>
-            <button onClick={() => deleteTask(task.id)}>Elimina</button>
-          </li>
-        ))}
-      </ul>
-
-      {/* LINK ALLA PAGINA ATTIVITA' COMPLETATE */}
-      <Link to="/completed">Vedi attività completate</Link>
-
+    <div className="container">
+      <header>
+        <h1>To-Do List</h1>
+      </header>
+  
+      <main>
+        {/* FORM PER AGGIUNGERE UN NUOVO TASK */}
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={newTask}
+            onChange={(e) => setNewTask(e.target.value)}
+          />
+          <button type="submit">Aggiungi</button>
+        </form>
+  
+        {/* LISTA DEI TASK */}
+        <ul>
+          {tasks.map((task) => (
+            <li key={task.id}>
+              {/* GESTIONE DELLA MODIFICA DEL TASK */}
+              {editingTaskId === task.id ? (
+                <>
+                  <input
+                    type="text"
+                    value={editedText}
+                    onChange={(e) => setEditedText(e.target.value)}
+                  />
+                  <button onClick={() => handleSaveEdit(task.id)}>Salva</button>
+                  <button onClick={handleCancelEdit}>Annulla</button>
+                </>
+              ) : (
+                <>
+                  {/* VISUALIZZAZIONE DEL TASK */}
+                  <span
+                    style={{ textDecoration: task.completed ? "line-through" : "none" }}
+                  >
+                    {task.text}
+                  </span>
+                  <button onClick={() => handleEditClick(task)}>Modifica</button>
+                </>
+              )}
+              <button onClick={() => toggleComplete(task.id)}>
+                {task.completed ? "Ripristina" : "Completa"}
+              </button>
+              <button onClick={() => deleteTask(task.id)}>Elimina</button>
+            </li>
+          ))}
+        </ul>
+  
+        {/* LINK ALLA PAGINA ATTIVITA' COMPLETATE */}
+        <Link id="idLink" to="/completed">Vedi attività completate</Link>
+      </main>
+  
+      {/* FOOTER */}
+      <footer>
+        <p>© 2025 To-Do List App | Tutti i diritti riservati</p>
+      </footer>
     </div>
   );
 };
 
 export default Homepage;
+
