@@ -1,0 +1,57 @@
+/* COLORI PRESI DA https://coolors.co/palette/ff5400-ff6d00-ff8500-ff9100-ff9e00-00b4d8-0096c7-0077b6-023e8a-03045e
+    --orange-pantone: #ff5400;
+    --pumpkin: #ff6d00; *
+    --ut-orange: #ff8500;
+    --princeton-orange: #ff9100; *
+    --orange-peel: #ff9e00; *
+    --pacific-cyan: #00b4d8; *
+    --blue-green: #0096c7; *
+    --honolulu-blue: #0077b6;
+    --marian-blue: #023e8a;
+    --federal-blue: #03045e; *
+  */
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #00b4d8;
+    color: white;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #ff9100;
+    color: #03045e;
+    font-size: 50px;
+  }
+  
+  button {
+    background-color: #ff9e00;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #ff6d00;;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #0096c7;;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
